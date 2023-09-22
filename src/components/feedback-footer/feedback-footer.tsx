@@ -11,7 +11,7 @@ export const FeedbackFooter: FC<FeedbackFooterProps> = ({ onClick }) => {
   return (
     <footer>
       <Stack mt={6}>
-        <Button variant="contained" onClick={onClick}>
+        <Button variant="contained" size="large" onClick={onClick}>
           Enviar
         </Button>
       </Stack>

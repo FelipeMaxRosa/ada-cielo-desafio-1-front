@@ -1,19 +1,23 @@
-import { useState } from "react";
 import { SelectChangeEvent } from "@mui/material/Select";
 
 import { SelectField, Form, Input } from "../form";
 import { FEEDBACK_TYPE_OPTIONS } from "../constants";
+import { useFeedbackContext } from "../../contexts/feedback-context";
 
 export const FeedbackBody = () => {
-  const [feedbackType, setFeedbackType] = useState("");
-  const [feedbackMessage, setFeedbackMessage] = useState("");
+  const {
+    dispatch,
+    state: { feedbackMessage, feedbackType },
+  } = useFeedbackContext();
 
   const handleChange = (event: SelectChangeEvent<string>) => {
-    setFeedbackType(event.target.value);
+    const { name, value } = event.target;
+    dispatch({ type: "ONCHANGE", payload: { name, value } });
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setFeedbackMessage(event.target.value);
+    const { name, value } = event.target;
+    dispatch({ type: "ONCHANGE", payload: { name, value } });
   };
 
   return (
