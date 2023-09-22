@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { SelectChangeEvent } from "@mui/material/Select";
 
-import { SelectField, Form } from "../form";
+import { SelectField, Form, Input } from "../form";
 import { FEEDBACK_TYPE_OPTIONS } from "../constants";
-import { Input } from "../form";
 
 export const FeedbackBody = () => {
   const [feedbackType, setFeedbackType] = useState("");

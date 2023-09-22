@@ -2,7 +2,8 @@ import { FC } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { Label } from "../shared/shared.styles";
+
+import { Label } from "../shared";
 
 type SelectFieldProps = {
   items: Array<{ label: string; value: string }>;

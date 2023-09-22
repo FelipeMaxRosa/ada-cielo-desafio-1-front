@@ -1,8 +1,7 @@
-import * as React from "react";
 import { FC } from "react";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { FormControl, TextFieldProps } from "@mui/material";
+
 import { Label } from "../shared";
 
 export const Input: FC<TextFieldProps> = ({ label, ...props }) => {
