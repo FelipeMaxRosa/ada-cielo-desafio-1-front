@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 460px;
-  height: 640px;
 
   padding: 36px 24px;
   margin: 0 auto;

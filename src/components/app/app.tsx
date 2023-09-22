@@ -1,17 +1,11 @@
-import { FeedbackBody } from "../feedback-body";
-import { FeedbackContainer } from "../feedback-container";
-import { FeedbackHeader } from "../feedback-header";
-import { Container, Divisor } from "./app.styles";
+import { AppContainer } from "./app.styles";
+import { FeedbackForm } from "../feedback-form/feedback-form";
 
 function App() {
   return (
-    <Container>
-      <FeedbackContainer>
-        <FeedbackHeader />
-        <Divisor />
-        <FeedbackBody />
-      </FeedbackContainer>
-    </Container>
+    <AppContainer>
+      <FeedbackForm />
+    </AppContainer>
   );
 }
 
