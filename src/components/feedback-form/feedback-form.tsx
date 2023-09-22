@@ -12,7 +12,7 @@ export const FeedbackForm = () => {
         <FeedbackHeader />
         <Divisor />
         <FeedbackBody />
-        <FeedbackFooter onClick={() => {}} />
+        <FeedbackFooter />
       </FeedbackContainer>
     </FeedbackProvider>
   );
