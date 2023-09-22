@@ -2,7 +2,7 @@ import { FC } from "react";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { Label } from "./select-field.styles";
+import { Label } from "../shared/shared.styles";
 
 type SelectFieldProps = {
   items: Array<{ label: string; value: string }>;
@@ -21,7 +21,7 @@ export const SelectField: FC<SelectFieldProps> = ({
   label = "",
 }) => {
   return (
-    <FormControl sx={{ m: 1, minWidth: 280 }} size="medium">
+    <FormControl sx={{ minWidth: 280 }} size="medium">
       <Label>{label}</Label>
       <Select
         name={name}
