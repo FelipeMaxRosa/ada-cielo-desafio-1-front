@@ -1,13 +1,15 @@
-import { FeedbackContainer } from "../feedback-container/feedback-container";
-import { FeedbackHeader } from "../feedback-header/feedback-header";
-import { Container } from "./app.styles";
+import { FeedbackBody } from "../feedback-body";
+import { FeedbackContainer } from "../feedback-container";
+import { FeedbackHeader } from "../feedback-header";
+import { Container, Divisor } from "./app.styles";
 
 function App() {
   return (
     <Container>
       <FeedbackContainer>
         <FeedbackHeader />
-        <hr />
+        <Divisor />
+        <FeedbackBody />
       </FeedbackContainer>
     </Container>
   );

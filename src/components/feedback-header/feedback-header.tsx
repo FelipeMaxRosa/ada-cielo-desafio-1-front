@@ -4,7 +4,7 @@ import { Title } from "./feedback-header.styles";
 export const FeedbackHeader = () => {
   return (
     <header>
-      <Title>Customer Feedback</Title>
+      <Title>Deixe seu Feedback</Title>
     </header>
   );
 };
