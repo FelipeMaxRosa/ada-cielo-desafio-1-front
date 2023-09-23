@@ -1,38 +1,14 @@
-import { createContext, useContext, ReactNode, useReducer } from "react";
+import { createContext, useContext, ReactNode } from "react";
 
-interface FeedbackState {
-  feedbackType: string;
-  feedbackMessage: string;
-}
-
-type OnChange = { type: "ONCHANGE"; payload: { name: string; value: string } };
-type FeedbackAction = OnChange;
+import { feedbackReducer } from "./reducers";
 
 interface IFeedbackProviderProps {
   children: ReactNode;
 }
 
-function feedbackReducer(state: FeedbackState, action: FeedbackAction) {
-  switch (action.type) {
-    case "ONCHANGE": {
-      return {
-        ...state,
-        [action.payload.name]: action.payload.value,
-      };
-    }
-    default:
-      return state;
-  }
-}
-
-const feedbackInitialState: FeedbackState = {
-  feedbackMessage: "",
-  feedbackType: "",
-};
-
 interface IFeedbackContextData {
-  state: FeedbackState;
-  dispatch: React.Dispatch<FeedbackAction>;
+  state: feedbackReducer.FeedbackState;
+  dispatch: React.Dispatch<feedbackReducer.FeedbackAction>;
 }
 
 export const FeedbackContext = createContext<IFeedbackContextData>(
@@ -40,7 +16,7 @@ export const FeedbackContext = createContext<IFeedbackContextData>(
 );
 
 export function FeedbackProvider({ children }: IFeedbackProviderProps) {
-  const [state, dispatch] = useReducer(feedbackReducer, feedbackInitialState);
+  const { state, dispatch } = feedbackReducer.useFeedbackReducer();
 
   const contextValues = {
     state,
