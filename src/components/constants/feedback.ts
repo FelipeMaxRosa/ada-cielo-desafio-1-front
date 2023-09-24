@@ -1,14 +1,16 @@
-export const FEEDBACK_TYPE_OPTIONS = [
+import { FeedbackType, FeedbackTypeOption } from '../../models/interfaces';
+
+export const FEEDBACK_TYPE_OPTIONS: FeedbackTypeOption[] = [
   {
-    label: "Crítica",
-    value: "critica",
+    label: 'Crítica',
+    value: FeedbackType.CRITICA,
   },
   {
-    label: "Sugestão",
-    value: "sugestao",
+    label: 'Elogio',
+    value: FeedbackType.ELOGIO,
   },
   {
-    label: "Elogio",
-    value: "elogio",
+    label: 'Sugestão',
+    value: FeedbackType.SUGESTAO,
   },
 ];

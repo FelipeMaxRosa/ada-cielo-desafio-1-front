@@ -1,23 +1,24 @@
-import { useFeedbackContext } from "../contexts/feedback-context";
-import { feedbackService } from "../services";
+import { useFeedbackContext } from '../contexts/feedback-context';
+import { FeedbackData } from '../models/interfaces';
+import { feedbackService } from '../services';
 
 export const useFeedback = () => {
   const { state, dispatch } = useFeedbackContext();
 
   const submitFeedback = async () => {
     try {
-      dispatch({ type: "SET_LOADING", payload: true });
-      const feedbackData = {
-        feedbackMessage: state.feedbackMessage,
-        feedbackType: state.feedbackType,
+      dispatch({ type: 'SET_LOADING', payload: true });
+      const feedbackData: FeedbackData = {
+        message: state.feedbackMessage,
+        type: state.feedbackType,
       };
 
       await feedbackService.submitFeedback(feedbackData);
-      dispatch({ type: "SET_ERROR", payload: "" });
+      dispatch({ type: 'SET_ERROR', payload: '' });
     } catch (error) {
-      dispatch({ type: "SET_ERROR", payload: "Erro ao submeter feedback" });
+      dispatch({ type: 'SET_ERROR', payload: 'Erro ao submeter feedback' });
     } finally {
-      dispatch({ type: "SET_LOADING", payload: false });
+      dispatch({ type: 'SET_LOADING', payload: false });
     }
   };
 
