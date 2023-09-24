@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # backend
-/back/target
+/back/target/
 
 # frontend
 /front/node_modules
