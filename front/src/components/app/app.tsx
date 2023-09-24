@@ -32,7 +32,7 @@ function App() {
   return (
     <AppContainer>
       <FeedbackForm />
-      <FeedbacksTable tableRows={mockedTableRows} />
+      {/* <FeedbacksTable tableRows={mockedTableRows} /> */}
     </AppContainer>
   );
 }
