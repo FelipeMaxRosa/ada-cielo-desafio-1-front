@@ -1,23 +1,23 @@
-import { SelectChangeEvent } from "@mui/material/Select";
+import { SelectChangeEvent } from '@mui/material/Select';
 
-import { SelectField, Form, Input } from "../../form";
-import { FEEDBACK_TYPE_OPTIONS } from "../../constants";
-import { useFeedbackContext } from "../../../contexts/feedback-context";
+import { SelectField, Form, Input } from '../../form';
+import { FEEDBACK_TYPE_OPTIONS } from '../../constants';
+import { useFeedbackContext } from '../../../contexts/feedback-context';
 
 export const FeedbackBody = () => {
   const {
     dispatch,
-    state: { feedbackMessage, feedbackType },
+    state: { message: feedbackMessage, type: feedbackType },
   } = useFeedbackContext();
 
   const handleChange = (event: SelectChangeEvent<string>) => {
     const { name, value } = event.target;
-    dispatch({ type: "ONCHANGE", payload: { name, value } });
+    dispatch({ type: 'ONCHANGE', payload: { name, value } });
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    dispatch({ type: "ONCHANGE", payload: { name, value } });
+    dispatch({ type: 'ONCHANGE', payload: { name, value } });
   };
 
   return (
@@ -27,12 +27,12 @@ export const FeedbackBody = () => {
         value={feedbackType}
         onChange={handleChange}
         label="Que tipo de feedback que voce gostaria de nos deixar?"
-        name="feedbackType"
+        name="type"
       />
       <Input
         multiline
         rows={6}
-        name="feedbackMessage"
+        name="message"
         value={feedbackMessage}
         label="Deixe seu feedback aqui:"
         onChange={handleInputChange}

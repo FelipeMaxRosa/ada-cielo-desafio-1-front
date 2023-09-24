@@ -8,9 +8,11 @@ export const useFeedback = () => {
   const submitFeedback = async () => {
     try {
       dispatch({ type: 'SET_LOADING', payload: true });
+      const { message, type } = state;
+
       const feedbackData: FeedbackData = {
-        message: state.feedbackMessage,
-        type: state.feedbackType,
+        message,
+        type,
       };
 
       await feedbackService.submitFeedback(feedbackData);
@@ -26,5 +28,6 @@ export const useFeedback = () => {
     submitFeedback,
     loading: state.loading,
     error: state.error,
+    state,
   };
 };

@@ -1,42 +1,42 @@
-import { useReducer } from "react";
+import { useReducer } from 'react';
 
 type OnChangeAction = {
-  type: "ONCHANGE";
+  type: 'ONCHANGE';
   payload: { name: string; value: string };
 };
-type SetLoading = { type: "SET_LOADING"; payload: boolean };
-type SetError = { type: "SET_ERROR"; payload: string };
+type SetLoading = { type: 'SET_LOADING'; payload: boolean };
+type SetError = { type: 'SET_ERROR'; payload: string };
 export type FeedbackAction = OnChangeAction | SetLoading | SetError;
 
 export interface FeedbackState {
-  feedbackType: string;
-  feedbackMessage: string;
+  type: string;
+  message: string;
   loading: boolean;
   error: string;
 }
 
 const initialState: FeedbackState = {
-  feedbackMessage: "",
-  feedbackType: "",
+  message: '',
+  type: '',
   loading: false,
-  error: "",
+  error: '',
 };
 
 function reducer(state: FeedbackState, action: FeedbackAction) {
   switch (action.type) {
-    case "ONCHANGE": {
+    case 'ONCHANGE': {
       return {
         ...state,
         [action.payload.name]: action.payload.value,
       };
     }
-    case "SET_LOADING": {
+    case 'SET_LOADING': {
       return {
         ...state,
         loading: action.payload,
       };
     }
-    case "SET_ERROR": {
+    case 'SET_ERROR': {
       return {
         ...state,
         error: action.payload,

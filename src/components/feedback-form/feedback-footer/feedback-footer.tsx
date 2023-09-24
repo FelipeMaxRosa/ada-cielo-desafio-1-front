@@ -1,10 +1,12 @@
-import Stack from "@mui/material/Stack";
+import Stack from '@mui/material/Stack';
 
-import { Button } from "../../form";
-import { useFeedback } from "../../../hooks";
+import { Button } from '../../form';
+import { useFeedback } from '../../../hooks';
 
 export const FeedbackFooter = () => {
-  const { submitFeedback, loading } = useFeedback();
+  const { submitFeedback, loading, state } = useFeedback();
+  const hasEmptyField = state.message.length === 0 || state.type.length === 0;
+  const buttonSubmitDisabled = loading || hasEmptyField;
 
   return (
     <footer>
@@ -13,7 +15,7 @@ export const FeedbackFooter = () => {
           variant="contained"
           size="large"
           onClick={submitFeedback}
-          disabled={loading}
+          disabled={buttonSubmitDisabled}
         >
           Enviar
         </Button>
