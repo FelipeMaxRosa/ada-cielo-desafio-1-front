@@ -1,4 +1,4 @@
-import React, { PropsWithChildren, FC } from "react";
+import { PropsWithChildren, FC } from "react";
 import { Container } from "./feedback-container.styles";
 
 export const FeedbackContainer: FC<PropsWithChildren> = ({ children }) => {

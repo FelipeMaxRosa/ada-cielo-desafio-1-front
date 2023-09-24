@@ -1,9 +1,9 @@
-import { FC } from "react";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { FC } from 'react';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-import { Label } from "../shared";
+import { Label } from '../shared';
 
 type SelectFieldProps = {
   items: Array<{ label: string; value: string }>;
@@ -19,10 +19,10 @@ export const SelectField: FC<SelectFieldProps> = ({
   onChange,
   name,
   id,
-  label = "",
+  label = '',
 }) => {
   return (
-    <FormControl sx={{ minWidth: 280 }} size="medium">
+    <FormControl fullWidth size="medium">
       <Label>{label}</Label>
       <Select
         name={name}

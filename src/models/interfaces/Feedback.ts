@@ -1,6 +1,6 @@
 export interface Feedback {
   id: string;
-  feedbackMessage: string;
-  feedbackType: string;
+  message: string;
+  type: string;
   status: string;
 }
